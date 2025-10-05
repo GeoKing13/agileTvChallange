@@ -9,3 +9,4 @@ C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLoure
 C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\refint\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.dll
 C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.pdb
 C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\ref\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.dll
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.sourcelink.json

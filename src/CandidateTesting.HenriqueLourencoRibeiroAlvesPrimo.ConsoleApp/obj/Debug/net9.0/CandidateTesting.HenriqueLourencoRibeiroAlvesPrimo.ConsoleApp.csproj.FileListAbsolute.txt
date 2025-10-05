@@ -16,3 +16,4 @@ C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLoure
 C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.pdb
 C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.genruntimeconfig.cache
 C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\obj\Debug\net9.0\ref\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.dll
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.sourcelink.json
