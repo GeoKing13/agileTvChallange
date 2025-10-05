@@ -1,0 +1,11 @@
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\bin\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.deps.json
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\bin\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.dll
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\bin\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.pdb
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.AssemblyInfoInputs.cache
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.AssemblyInfo.cs
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.csproj.CoreCompileInputs.cache
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.dll
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\refint\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.dll
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.pdb
+C:\Projetos\AgileTVChallenge\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core\obj\Debug\net9.0\ref\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.dll
