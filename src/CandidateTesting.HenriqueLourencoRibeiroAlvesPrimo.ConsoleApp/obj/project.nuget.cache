@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "vELG9rFQR8U=",
+  "dgSpecHash": "nZ46FgO549Y=",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\AgileTVChallenge\\agileTvChallange\\src\\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Pessoal\\Treino\\agileTvChallange\\src\\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\henrique.primo\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",
+    "C:\\Users\\henrique.primo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0\\microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\henrique.primo\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\9.0.0\\microsoft.extensions.configuration.fileextensions.9.0.0.nupkg.sha512",
+    "C:\\Users\\henrique.primo\\.nuget\\packages\\microsoft.extensions.configuration.json\\9.0.0\\microsoft.extensions.configuration.json.9.0.0.nupkg.sha512",
+    "C:\\Users\\henrique.primo\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.0\\microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\henrique.primo\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\9.0.0\\microsoft.extensions.fileproviders.physical.9.0.0.nupkg.sha512",
+    "C:\\Users\\henrique.primo\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\9.0.0\\microsoft.extensions.filesystemglobbing.9.0.0.nupkg.sha512",
+    "C:\\Users\\henrique.primo\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
