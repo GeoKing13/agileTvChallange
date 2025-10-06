@@ -30,7 +30,7 @@ public sealed class ConvertLog : IConvertLine<CdnLogEntry, CdnLogExit>
         switch (cacheStatus)
         {
             case "INVALIDATE":
-                return "INVALIDATE";
+                return "REFRESH_HIT";
             default:
                 return cacheStatus;
         }

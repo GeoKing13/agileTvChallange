@@ -43,3 +43,12 @@ C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroA
 C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.Logging.Console.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+C:\Pessoal\Treino\agileTvChallange\src\CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp\bin\Debug\net9.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
