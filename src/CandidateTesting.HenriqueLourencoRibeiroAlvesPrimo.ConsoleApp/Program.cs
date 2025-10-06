@@ -3,13 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Models.Request;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Ports;
-using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Adapter.In.Sources;
-using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Adapter.Processing;
-using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Adapter.Mapping;
-using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Adapter.Out;
-using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Application;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Configuration;
-using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Domain.Models;
+using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Constants;
 
 // Configurar a aplicação
 var configuration = new ConfigurationBuilder()
@@ -17,44 +12,30 @@ var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .Build();
 
-// Configurar logging
+// Configurar serviços
 var services = new ServiceCollection();
-services.AddLogging(builder => builder.AddConsole());
 services.AddSingleton<IConfiguration>(configuration);
+services.AddApplicationServices(configuration);
 
-// Configurar CdnSettings
-var cdnSettings = new CdnSettings
-{
-    Provider = configuration["CdnSettings:Provider"] ?? "MINHA CDN"
-};
-services.AddSingleton(cdnSettings);
-
-// Registrar serviços
-services.AddSingleton<ISourceReader, FileSourceReader>();
-services.AddSingleton<ILineParser<CdnLogEntry>, MinhaCdnLineParser>();
-services.AddSingleton<IConvertLine<CdnLogEntry, CdnLogExit>, ConvertLog>();
-services.AddSingleton<ITargetWriter, CdnOutFileWriter>();
-services.AddSingleton<IConvertLogs, ConvertLogs>();
-
-var serviceProvider = services.BuildServiceProvider();
+using var serviceProvider = services.BuildServiceProvider();
+var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
 
 // Configurações
 var provider = configuration["CdnSettings:Provider"];
 var version = configuration["Version"];
 
-Console.WriteLine("=== Conversor de Logs CDN ===");
-Console.WriteLine($"Versão: {version}");
-Console.WriteLine($"Provider: {provider}");
-Console.WriteLine();
+logger.LogInformation("=== Conversor de Logs CDN ===");
+logger.LogInformation("Versão: {Version}", version);
+logger.LogInformation("Provider: {Provider}", provider);
 
 // Caminhos dos arquivos
-var inputFile = "input.log";
-var outputFile = "output.log";
+var inputFile = ApplicationConstants.InputFileName;
+var outputFile = ApplicationConstants.OutputFileName;
 
 // Verificar se arquivo de entrada existe
 if (!File.Exists(inputFile))
 {
-    Console.WriteLine($"❌ Arquivo de entrada '{inputFile}' não encontrado!");
+    logger.LogError("Arquivo de entrada '{InputFile}' não encontrado!", inputFile);
     return;
 }
 
@@ -62,12 +43,11 @@ if (!File.Exists(inputFile))
 if (File.Exists(outputFile))
 {
     File.Delete(outputFile);
-    Console.WriteLine($"🗑️ Arquivo de saída anterior removido: {outputFile}");
+    logger.LogInformation("Arquivo de saída anterior removido: {OutputFile}", outputFile);
 }
 
-Console.WriteLine($"📖 Lendo arquivo de entrada: {inputFile}");
-Console.WriteLine($"📝 Gerando arquivo de saída: {outputFile}");
-Console.WriteLine();
+logger.LogInformation("Lendo arquivo de entrada: {InputFile}", inputFile);
+logger.LogInformation("Gerando arquivo de saída: {OutputFile}", outputFile);
 
 try
 {
@@ -78,24 +58,23 @@ try
     var result = await convertLogs.RunAsync(request);
 
     // Mostrar resultados
-    Console.WriteLine("✅ Conversão concluída com sucesso!");
-    Console.WriteLine($"📊 Estatísticas:");
-    Console.WriteLine($"   • Linhas lidas: {result.LinesRead}");
-    Console.WriteLine($"   • Linhas convertidas: {result.LinesConverted}");
-    Console.WriteLine($"   • Linhas inválidas: {result.LinesInvalid}");
-    Console.WriteLine($"   • Sucesso: {(result.Success ? "✅ Sim" : "❌ Não")}");
-    Console.WriteLine($"   • Arquivo gerado: {result.TargetPath}");
+    logger.LogInformation("Conversão concluída com sucesso!");
+    logger.LogInformation("Estatísticas:");
+    logger.LogInformation("   • Linhas lidas: {LinesRead}", result.LinesRead);
+    logger.LogInformation("   • Linhas convertidas: {LinesConverted}", result.LinesConverted);
+    logger.LogInformation("   • Linhas inválidas: {LinesInvalid}", result.LinesInvalid);
+    logger.LogInformation("   • Sucesso: {Success}", result.Success ? "Sim" : "Não");
+    logger.LogInformation("   • Arquivo gerado: {TargetPath}", result.TargetPath);
 
     if (File.Exists(outputFile))
     {
-        Console.WriteLine($"\n📄 Conteúdo do arquivo de saída:");
-        Console.WriteLine(new string('=', 50));
+        logger.LogInformation("Conteúdo do arquivo de saída:");
+        logger.LogInformation("{Separator}", new string('=', 50));
         var outputContent = await File.ReadAllTextAsync(outputFile);
-        Console.WriteLine(outputContent);
+        logger.LogInformation("{OutputContent}", outputContent);
     }
 }
 catch (Exception ex)
 {
-    Console.WriteLine($"❌ Erro durante a conversão: {ex.Message}");
-    Console.WriteLine($"Stack trace: {ex.StackTrace}");
+    logger.LogError(ex, "Erro durante a conversão: {Message}", ex.Message);
 }

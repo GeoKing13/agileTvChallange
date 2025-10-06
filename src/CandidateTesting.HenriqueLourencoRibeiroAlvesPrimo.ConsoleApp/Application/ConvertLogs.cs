@@ -1,11 +1,9 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Models.Request;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Models.Response;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Ports;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Domain.Models;
 using Microsoft.Extensions.Logging;
+using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Validation;
 
 namespace CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Application;
 
@@ -43,10 +41,23 @@ public sealed class ConvertLogs : IConvertLogs
         if (string.IsNullOrWhiteSpace(request.TargetPath))
             throw new ArgumentException("TargetPath não pode ser vazio.", nameof(request.TargetPath));
 
+        // Validar arquivo de origem
+        InputValidator.ValidateFileExists(request.SourceUrl, nameof(request.SourceUrl));
+
+        // Validar diretório de destino
+        var outputDirectory = Path.GetDirectoryName(request.TargetPath);
+        if (!string.IsNullOrEmpty(outputDirectory))
+        {
+            InputValidator.ValidateDirectoryWritable(outputDirectory);
+        }
+
         var startedAt = DateTime.Now;
         var linesRead = 0;
         var linesConverted = 0;
         var linesInvalid = 0;
+
+        _logger.LogInformation("Iniciando conversão de logs. Arquivo origem: {SourceUrl}, Arquivo destino: {TargetPath}",
+            request.SourceUrl, request.TargetPath);
 
         // cabeçalho do ficheiro de saída
         await _writer.WriteHeaderAsync(DateTimeOffset.Now, request.TargetPath, cancellationToken);
@@ -56,14 +67,13 @@ public sealed class ConvertLogs : IConvertLogs
             linesRead++;
             if (string.IsNullOrWhiteSpace(line))
             {
-                // linha vazia: ignora mas conta como lida
                 continue;
             }
 
             if (!_lineParser.TryParse(line, out var entry))
             {
                 linesInvalid++;
-                _logger?.LogWarning("Linha inválida descartada: {Line}", line);
+                _logger.LogWarning("Linha inválida descartada na linha {LineNumber}: {Line}", linesRead, line);
                 continue;
             }
 
@@ -73,6 +83,10 @@ public sealed class ConvertLogs : IConvertLogs
         }
 
         var finishedAt = DateTime.Now;
+        var duration = finishedAt - startedAt;
+
+        _logger.LogInformation("Conversão concluída. Linhas lidas: {LinesRead}, Convertidas: {LinesConverted}, Inválidas: {LinesInvalid}, Duração: {Duration}ms",
+            linesRead, linesConverted, linesInvalid, duration.TotalMilliseconds);
 
         // monta o DTO de resposta
         var response = new ConvertLogsResponse(
@@ -81,7 +95,7 @@ public sealed class ConvertLogs : IConvertLogs
             LinesConverted: linesConverted,
             LinesInvalid: linesInvalid,
             StartTime: startedAt,
-            FinnisthTime: finishedAt,
+            FinishTime: finishedAt,
             Success: linesInvalid == 0
         );
 

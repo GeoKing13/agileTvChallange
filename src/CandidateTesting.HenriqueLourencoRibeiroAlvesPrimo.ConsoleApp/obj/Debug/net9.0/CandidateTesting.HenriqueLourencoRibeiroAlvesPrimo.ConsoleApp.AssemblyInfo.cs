@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+934662fbd5cbd790beb46ed898fe9ac4b7896576")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fb69ceadd81104b7130fbef4a1fa9129c9b4753")]
 [assembly: System.Reflection.AssemblyProductAttribute("CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

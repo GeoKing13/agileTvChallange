@@ -3,6 +3,7 @@ using System.Text;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Ports;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Domain.Models;
 using Microsoft.Extensions.Configuration;
+using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Constants;
 
 namespace CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Adapter.Out;
 
@@ -12,7 +13,7 @@ public sealed class CdnOutFileWriter : ITargetWriter
 
     public CdnOutFileWriter(IConfiguration configuration)
     {
-        _version = configuration["Version"] ?? "1.0";
+        _version = configuration["Version"] ?? ApplicationConstants.DefaultVersion;
     }
 
     private string[] HeaderLines =>

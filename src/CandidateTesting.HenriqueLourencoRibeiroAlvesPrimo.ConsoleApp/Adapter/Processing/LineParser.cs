@@ -2,13 +2,14 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Ports;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Domain.Models;
+using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Constants;
 
 namespace CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Adapter.Processing;
 
 public sealed class MinhaCdnLineParser : ILineParser<CdnLogEntry>
 {
     private static readonly Regex LineRegex = new(
-        @"^(?<responseSize>\d+)\|(?<statusCode>\d+)\|(?<cacheStatus>\w+)\|""(?<method>\w+)\s+(?<path>\S+)\s+HTTP/\d\.\d""\|(?<timeTaken>[\d.]+)$",
+        RegexPatterns.CdnLogLine,
         RegexOptions.Compiled | RegexOptions.CultureInvariant);
 
     public bool TryParse(string line, out CdnLogEntry? result)

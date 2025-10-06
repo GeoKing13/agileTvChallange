@@ -1,6 +1,7 @@
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Ports;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Domain.Models;
 using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Configuration;
+using CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.ConsoleApp.Constants;
 
 namespace CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Adapter.Mapping;
 
@@ -25,14 +26,12 @@ public sealed class ConvertLog : IConvertLine<CdnLogEntry, CdnLogExit>
         return new CdnLogExit(_cdnSettings.Provider, input.HttpMethod, input.StatusCode, input.UriPath, roundedTime, input.ResponseSize, cacheStatus);
     }
 
-    private string GetCacheStatus(string cacheStatus)
+    private static string GetCacheStatus(string cacheStatus)
     {
-        switch (cacheStatus)
+        return cacheStatus switch
         {
-            case "INVALIDATE":
-                return "REFRESH_HIT";
-            default:
-                return cacheStatus;
-        }
+            ApplicationConstants.CacheStatus.Invalidate => ApplicationConstants.CacheStatus.RefreshHit,
+            _ => cacheStatus
+        };
     }
 }

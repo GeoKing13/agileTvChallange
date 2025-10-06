@@ -8,6 +8,6 @@ namespace CandidateTesting.HenriqueLourencoRibeiroAlvesPrimo.Core.Models.Respons
 /// <param name="LinesConverted"></param>
 /// <param name="LinesInvalid"></param>
 /// <param name="StartTime"></param>
-/// <param name="FinnisthTime"></param>
+/// <param name="FinishTime"></param>
 /// <param name="Success"></param>
-public record ConvertLogsResponse(string TargetPath, int LinesRead, int LinesConverted, int LinesInvalid, DateTime StartTime, DateTime FinnisthTime, bool Success);
+public record ConvertLogsResponse(string TargetPath, int LinesRead, int LinesConverted, int LinesInvalid, DateTime StartTime, DateTime FinishTime, bool Success);
